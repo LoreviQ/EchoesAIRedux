@@ -1,4 +1,4 @@
-import { type IconComponent, HomeIcon, UserIcon, DocumentIcon, SettingsIcon } from "~/assets/icons";
+import { type IconComponent, HomeIcon, DocumentIcon, SettingsIcon, LoginIcon } from "~/assets/icons";
 
 
 export interface NavItem {
@@ -10,7 +10,7 @@ export interface NavItem {
 export const navigationItems: NavItem[] = [
     {
         label: "Home",
-        path: "/",
+        path: "/home",
         icon: HomeIcon,
     },
     {
@@ -24,3 +24,9 @@ export const navigationItems: NavItem[] = [
         icon: SettingsIcon,
     },
 ];
+
+export const loginNavItem: NavItem = {
+    label: "Login",
+    path: "/login",
+    icon: LoginIcon,
+};

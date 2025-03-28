@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LeftSidebar from "~/components/LeftSidebar";
 import RightSidebar from "~/components/RightSidebar";
 import { getSupabaseClient } from "~/utils/supabase";
-import type { SessionStatus } from "~/types/models";
+import type { SessionStatus } from "~/types/session";
 
 export const meta: MetaFunction = () => {
   return [

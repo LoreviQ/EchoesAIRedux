@@ -21,7 +21,7 @@ export function NavButton({ item, collapsed }: NavButtonProps) {
         ${isActive ? "font-bold" : "font-normal"}
       `}
         >
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className="w-8 h-8 flex items-center justify-center">
                 <item.icon />
             </div>
             {!collapsed && (

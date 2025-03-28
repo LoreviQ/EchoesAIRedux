@@ -1,7 +1,7 @@
-import { navigationItems } from "~/config/navigation";
+import { navigationItems, loginNavItem } from "~/config/navigation";
 import { NavButton } from "~/components/buttons";
 import { TypefaceOutlined } from "~/components/branding";
-import type { SessionStatus } from "~/types/models";
+import type { SessionStatus } from "~/types/session";
 
 export default function LeftSidebar({ collapsed = false, sessionStatus }: { collapsed?: boolean, sessionStatus: SessionStatus }) {
     return (
@@ -21,7 +21,14 @@ export default function LeftSidebar({ collapsed = false, sessionStatus }: { coll
             </div>
 
             <div className="mt-auto border-t border-gray-600 h-[84px] flex items-center justify-center">
-                <span className="text-sm text-gray-300">Log in</span>
+                {sessionStatus.active ? (
+                    <span className="text-sm text-gray-300">Logged In</span>
+                ) : (
+                    <NavButton
+                        item={loginNavItem}
+                        collapsed={collapsed}
+                    />
+                )}
             </div>
         </div>
     );
