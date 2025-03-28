@@ -14,11 +14,6 @@ export const navigationItems: NavItem[] = [
         icon: HomeIcon,
     },
     {
-        label: "User",
-        path: "/user",
-        icon: UserIcon,
-    },
-    {
         label: "Notifications",
         path: "/notifications",
         icon: DocumentIcon,
