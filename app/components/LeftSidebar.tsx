@@ -1,8 +1,9 @@
 import { navigationItems } from "~/config/navigation";
 import { NavButton } from "~/components/buttons";
 import { TypefaceOutlined } from "~/components/branding";
+import type { SessionStatus } from "~/types/models";
 
-export default function LeftSidebar({ collapsed = false }: { collapsed?: boolean }) {
+export default function LeftSidebar({ collapsed = false, sessionStatus }: { collapsed?: boolean, sessionStatus: SessionStatus }) {
     return (
         <div className={`bg-black text-white ${collapsed ? "w-[84px]" : "w-[280px]"} h-screen transition-all duration-300 border-r border-gray-600 flex flex-col`}>
             <div className="p-4 space-y-4">
