@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
+import { Outlet, ShouldRevalidateFunction, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import LeftSidebar from "~/components/LeftSidebar";
 import RightSidebar from "~/components/RightSidebar";
@@ -24,6 +24,15 @@ export async function loader() {
   }
   return { sessionStatus };
 }
+
+// Required to fix bug where defaultShouldRevalidate is for some reason not set by default
+export const shouldRevalidate: ShouldRevalidateFunction = ({
+  defaultShouldRevalidate,
+}) => {
+  console.log("defaultDecision", defaultShouldRevalidate);
+  return defaultShouldRevalidate;
+};
+
 
 export default function App() {
   const { sessionStatus } = useLoaderData<typeof loader>();
